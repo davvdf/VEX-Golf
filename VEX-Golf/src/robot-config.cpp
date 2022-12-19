@@ -17,6 +17,8 @@ motor clawMotor = motor(PORT1, ratio18_1, true);
 signature Vision9__BALL = signature (1, -1263, -949, -1106, -5333, -5099, -5216, 5.7, 0);
 vision Vision9 = vision (PORT9, 50, Vision9__BALL);
 /*vex-vision-config:end*/
+distance rightDist = distance(PORT18);
+distance leftDist = distance(PORT12);
 
 // VEXcode generated functions
 

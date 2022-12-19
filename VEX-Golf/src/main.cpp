@@ -36,21 +36,29 @@
 
 using namespace vex;
 
+void dump(){
+  armMotor.spinFor(reverse, 260, degrees);
+}
+void getBall(){
+  if ( Vision9.takeSnapshot(Vision9__BALL)){
+    if (Vision9.largestObject.centerY > 100){
+      clawMotor.spin(forward);
+      armMotor.spinFor(forward, 100, degrees);
+      armMotor.stop();        
+      wait(3,seconds);
+        
+    }
+  }
+}
+
 int main() {
   // Initializing Robot Configuration. DO NOT REMOVE!
   vexcodeInit();
   armMotor.spinFor(reverse, 190, degrees);
   armMotor.setVelocity(20, percent);
  while (true) {
-   if ( Vision9.takeSnapshot(Vision9__BALL)){
-     if (Vision9.largestObject.centerY > 100){
-        clawMotor.spin(forward);
-        armMotor.spinFor(forward, 100, degrees);
-        armMotor.stop();        
-        wait(3,seconds);
-        armMotor.spinFor(reverse, 260, degrees);
-     }
-    }
+   getBall();
+
    wait(25, msec);
  }
   
