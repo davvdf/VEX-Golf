@@ -14,7 +14,8 @@ drivetrain Drivetrain = drivetrain(LeftDriveSmart, RightDriveSmart, 319.19, 295,
 motor armMotor = motor(PORT19, ratio36_1, true);
 motor clawMotor = motor(PORT1, ratio18_1, true);
 /*vex-vision-config:begin*/
-vision Vision9 = vision (PORT9, 50);
+signature Vision9__BALL = signature (1, -1263, -949, -1106, -5333, -5099, -5216, 5.7, 0);
+vision Vision9 = vision (PORT9, 50, Vision9__BALL);
 /*vex-vision-config:end*/
 
 // VEXcode generated functions
