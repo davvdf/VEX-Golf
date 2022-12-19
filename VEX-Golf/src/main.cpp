@@ -15,6 +15,16 @@
 // armMotor             motor         19              
 // clawMotor            motor         1               
 // Vision9              vision        9               
+// rightDist            distance      18              
+// leftDist             distance      12              
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// Drivetrain           drivetrain    11, 20          
+// armMotor             motor         19              
+// clawMotor            motor         1               
+// Vision9              vision        9               
 // rightSense           distance      18              
 // leftDist             distance      12              
 // ---- END VEXCODE CONFIGURED DEVICES ----
@@ -97,9 +107,9 @@ void turnToNext(){
 int main() {
   // Initializing Robot Configuration. DO NOT REMOVE!
   vexcodeInit();
-  armMotor.spinFor(reverse, 190, degrees);
+  armMotor.spinToPosition(190, degrees);
   armMotor.setVelocity(20, percent);
-  armMotor.spinToPosition(-260, degrees);
+  armMotor.spinToPosition(260, degrees);
   while (true) {
     getBall();
     
