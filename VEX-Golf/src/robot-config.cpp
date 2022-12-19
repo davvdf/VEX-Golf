@@ -11,7 +11,7 @@ brain  Brain;
 motor LeftDriveSmart = motor(PORT11, ratio18_1, false);
 motor RightDriveSmart = motor(PORT20, ratio18_1, true);
 drivetrain Drivetrain = drivetrain(LeftDriveSmart, RightDriveSmart, 319.19, 295, 40, mm, 1);
-motor armMotor = motor(PORT19, ratio36_1, true);
+motor armMotor = motor(PORT19, ratio36_1, false);
 motor clawMotor = motor(PORT1, ratio18_1, true);
 /*vex-vision-config:begin*/
 signature Vision9__BALL = signature (1, -1263, -949, -1106, -5333, -5099, -5216, 5.7, 0);
