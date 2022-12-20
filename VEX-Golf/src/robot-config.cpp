@@ -19,6 +19,11 @@ vision Vision9 = vision (PORT9, 50, Vision9__BALL);
 /*vex-vision-config:end*/
 distance rightDist = distance(PORT18);
 distance leftDist = distance(PORT12);
+line LineTrackerA = line(Brain.ThreeWirePort.A);
+line LineTrackerB = line(Brain.ThreeWirePort.B);
+line LineTrackerC = line(Brain.ThreeWirePort.C);
+line LineTrackerD = line(Brain.ThreeWirePort.D);
+line LineTrackerE = line(Brain.ThreeWirePort.E);
 
 // VEXcode generated functions
 

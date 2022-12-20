@@ -18,6 +18,11 @@ extern signature Vision9__SIG_7;
 extern vision Vision9;
 extern distance rightDist;
 extern distance leftDist;
+extern line LineTrackerA;
+extern line LineTrackerB;
+extern line LineTrackerC;
+extern line LineTrackerD;
+extern line LineTrackerE;
 
 /**
  * Used to initialize code/tasks/devices added using tools in VEXcode Pro.
