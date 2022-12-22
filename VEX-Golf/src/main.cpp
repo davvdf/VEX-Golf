@@ -151,18 +151,6 @@ using namespace vex;
 
 int thresholdVal = 50;
 
-void getBall(){
-  if ( Vision9.takeSnapshot(Vision9__BALL)){
-    if (Vision9.largestObject.centerY > 100){
-      clawMotor.spin(forward);
-      armMotor.spinToPosition(90, degrees);
-      armMotor.stop();        
-      wait(3,seconds);
-        
-    }
-  }
-}
-
 void driveSense(){
   if (LineTrackerB.reflectivity()>thresholdVal){
     Drivetrain.drive(reverse);
@@ -178,12 +166,28 @@ void driveSense(){
   } else if (LineTrackerD.reflectivity()>thresholdVal){
     Drivetrain.driveFor(reverse, 210, mm);
     Drivetrain.turnFor(right, 90, degrees);
+  } 
+}
+
+void getBall(){
+  if (Vision9.takeSnapshot(Vision9__BALL)){
+    Drivetrain.stop();
+    if (Vision9.largestObject.centerY > 100){
+      clawMotor.spin(forward);
+      armMotor.spinToPosition(90, degrees);
+      armMotor.stop();        
+      wait(3,seconds);   
+    }
+    
   }
+  
 }
 
 void senseT(){
-  if (LineTrackerD.reflectivity()>thresholdVal && LineTrackerE.reflectivity()>thresholdVal){
+  if (LineTrackerD.reflectivity()>thresholdVal && LineTrackerE.reflectivity()>thresholdVal && LineTrackerB.reflectivity()>thresholdVal){
+    Drivetrain.stop();
     armMotor.spinToPosition(260, degrees);
+    wait(3, sec);
     armMotor.spinToPosition(190, degrees);
     if (rightDist.objectDistance(mm) > 250){
       Drivetrain.turnFor(right , 90, degrees);
@@ -196,13 +200,16 @@ void senseT(){
 int main() {
   // Initializing Robot Configuration. DO NOT REMOVE!
   vexcodeInit();
-  armMotor.setVelocity(20, percent);
+  armMotor.setVelocity(50, percent);
   armMotor.spinToPosition(190, degrees);
+  Drivetrain.setDriveVelocity(10, percent);
   while (true) {
     getBall();
     driveSense();
     senseT();
-    wait(25, msec);
+    Brain.Screen.print(LineTrackerB.reflectivity());
+    
+    
  }
   
 }
