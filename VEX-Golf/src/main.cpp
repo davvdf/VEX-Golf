@@ -248,12 +248,13 @@ int main() {
   armMotor.spinToPosition(190, degrees);
   Drivetrain.setDriveVelocity(25, percent);
   Drivetrain.setTurnVelocity(25, percent);
+  hasBall = false;
   while (true) {
-    if (hasBall == true){
+    if (hasBall == false){
+      getBall();
+    } else {
       driveSense();
       senseT();
-    } else {
-      getBall();
     }
   } 
 }
