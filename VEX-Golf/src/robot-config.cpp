@@ -8,14 +8,11 @@ using code = vision::code;
 brain  Brain;
 
 // VEXcode device constructors
-motor LeftDriveSmart = motor(PORT11, ratio18_1, false);
-motor RightDriveSmart = motor(PORT20, ratio18_1, true);
-drivetrain Drivetrain = drivetrain(LeftDriveSmart, RightDriveSmart, 319.19, 295, 40, mm, 1);
 motor armMotor = motor(PORT19, ratio36_1, false);
 motor clawMotor = motor(PORT1, ratio18_1, true);
 /*vex-vision-config:begin*/
-signature Vision9__BALL = signature (1, -1263, -949, -1106, -5333, -5099, -5216, 5.7, 0);
-vision Vision9 = vision (PORT9, 50, Vision9__BALL);
+signature Vision6__BALL = signature (1, -1263, -949, -1106, -5333, -5099, -5216, 5.7, 0);
+vision Vision6 = vision (PORT6, 50, Vision6__BALL);
 /*vex-vision-config:end*/
 distance rightDist = distance(PORT18);
 distance leftDist = distance(PORT12);
@@ -24,6 +21,9 @@ line LineTrackerB = line(Brain.ThreeWirePort.B);
 line LineTrackerC = line(Brain.ThreeWirePort.C);
 line LineTrackerD = line(Brain.ThreeWirePort.D);
 line LineTrackerE = line(Brain.ThreeWirePort.E);
+motor LeftDriveSmart = motor(PORT11, ratio18_1, false);
+motor RightDriveSmart = motor(PORT20, ratio18_1, true);
+drivetrain Drivetrain = drivetrain(LeftDriveSmart, RightDriveSmart, 319.19, 295, 40, mm, 1);
 
 // VEXcode generated functions
 
