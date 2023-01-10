@@ -230,7 +230,14 @@ void senseT(){
       Drivetrain.turnFor(left, 90, degrees);
     }
     Drivetrain.driveFor(forward, 440, mm);
-    Drivetrain.turnFor(right, 90, degrees);
+    //Drivetrain.turnFor(right, 90, degrees);
+    
+    if ( leftDist.objectDistance(mm) < rightDist.objectDistance(mm)){
+      Drivetrain.turnFor(right,90,degrees);
+    }
+    else if (leftDist.objectDistance(mm) < rightDist.objectDistance(mm)){
+      Drivetrain.turnFor(left,90,degrees);
+    }
   }
 }
 
