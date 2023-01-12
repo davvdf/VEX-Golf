@@ -11,7 +11,7 @@ brain  Brain;
 motor armMotor = motor(PORT19, ratio36_1, false);
 motor clawMotor = motor(PORT1, ratio18_1, true);
 /*vex-vision-config:begin*/
-signature Vision6__BALL = signature (1, -1263, -949, -1106, -5333, -5099, -5216, 5.7, 0);
+signature Vision6__BALL = signature (1, -1183, -1083, -1133, -5097, -4997, -5047, 8.1, 0);
 vision Vision6 = vision (PORT6, 50, Vision6__BALL);
 /*vex-vision-config:end*/
 distance rightDist = distance(PORT18);
